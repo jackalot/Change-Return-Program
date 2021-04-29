@@ -4,8 +4,10 @@
 	<title>Change Return Program</title>
 	<script type="text/javascript">
 	function GiveChange() {
-	let MyMoney = document.getElementById("MyMoney").value;
-	let Cost = document.getElementById("Cost").value;
+	let MyMoneyString = document.getElementById("MyMoney").value;
+	MyMoney = parseInt(MyMoneyString);
+	let CostString = document.getElementById("Cost").value;
+	Cost = parseInt(CostString);
 		if(MyMoney > Cost)
 		{
 			let Remainder = MyMoney - Cost;
@@ -20,8 +22,7 @@
 			document.getElementById("Pennies").innerHTML = "Remaining Pennies:" + Pennies;
 			
 		}
-		else
-		{
+		if(MyMoney < Cost) {
 			document.getElementById("Remainder").innerHTML = "You get no change, you owe me money! Pay up buddy! Your money is smaller than the cost.";
 		}
 	}
