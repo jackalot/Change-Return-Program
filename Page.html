@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Change Return Program</title>
+	<script type="text/javascript">
+		function GiveChange() {
+		let MyMoney = document.getElementById("MyMoney").value;
+		let Cost = document.getElementById("Cost").value;
+		let Remainder = MyMoney - Cost;
+		let Quarters = Math.floor(Remainder / 25);
+		let Nickels = Math.floor(Remainder / 5);
+		let Dimes = Math.floor(Remainder / 10);
+		let Pennies = Math.floor(Remainder / 1);
+		document.getElementById("Remainder").innerHTML = "Your Change:" + Remainder;
+		document.getElementById("Quarters").innerHTML = "Remaining Quarters:" + Quarters;
+		document.getElementById("Nickels").innerHTML = "Remaining Nickels:" + Nickels;
+		document.getElementById("Dimes").innerHTML = "Remaining Dimes:" + Dimes;
+		document.getElementById("Pennies").innerHTML = "Remaining Pennies:" + Pennies;
+		}
+	</script>
+</head>
+<body>
+<input type="text" id="MyMoney" value="Insert Your Money"> </input>
+<input type="text" id="Cost" value="Insert the Cost"> </input>
+<button onclick="GiveChange()">Spare Change?</button>
+<p id="Remainder">Type in the first box how much money you have, and then put how much the item costs. No Dollar or Cent symbol needed. </p>
+<p id= "Quarters">Remaining Quarters: </p>
+<p id= "Dimes">Remaining Dimes: </p>
+<p id= "Nickels">Remaining Nickels: </p>
+<p id= "Pennies">Remaining Pennies: </p>
+</body>
+</html>
