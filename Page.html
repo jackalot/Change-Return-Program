@@ -3,20 +3,28 @@
 <head>
 	<title>Change Return Program</title>
 	<script type="text/javascript">
-		function GiveChange() {
-		let MyMoney = document.getElementById("MyMoney").value;
-		let Cost = document.getElementById("Cost").value;
-		let Remainder = MyMoney - Cost;
-		let Quarters = Math.floor(Remainder / 25);
-		let Nickels = Math.floor(Remainder / 5);
-		let Dimes = Math.floor(Remainder / 10);
-		let Pennies = Math.floor(Remainder / 1);
-		document.getElementById("Remainder").innerHTML = "Your Change:" + Remainder;
-		document.getElementById("Quarters").innerHTML = "Remaining Quarters:" + Quarters;
-		document.getElementById("Nickels").innerHTML = "Remaining Nickels:" + Nickels;
-		document.getElementById("Dimes").innerHTML = "Remaining Dimes:" + Dimes;
-		document.getElementById("Pennies").innerHTML = "Remaining Pennies:" + Pennies;
+	function GiveChange() {
+	let MyMoney = document.getElementById("MyMoney").value;
+	let Cost = document.getElementById("Cost").value;
+		if(MyMoney > Cost)
+		{
+			let Remainder = MyMoney - Cost;
+			let Quarters = Math.floor(Remainder / 25);
+			let Nickels = Math.floor(Remainder / 5);
+			let Dimes = Math.floor(Remainder / 10);
+			let Pennies = Math.floor(Remainder / 1);
+			document.getElementById("Remainder").innerHTML = "Your Change:" + Remainder;
+			document.getElementById("Quarters").innerHTML = "Remaining Quarters:" + Quarters;
+			document.getElementById("Nickels").innerHTML = "Remaining Nickels:" + Nickels;
+			document.getElementById("Dimes").innerHTML = "Remaining Dimes:" + Dimes;
+			document.getElementById("Pennies").innerHTML = "Remaining Pennies:" + Pennies;
+			
 		}
+		else
+		{
+			document.getElementById("Remainder").innerHTML = "You get no change, you owe me money! Pay up buddy! Your money is smaller than the cost.";
+		}
+	}
 	</script>
 </head>
 <body>
